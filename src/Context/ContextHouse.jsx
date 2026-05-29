@@ -19,10 +19,7 @@ const ContextHouse = ({children}) => {
     fetchHouses()
   }, [])
 
-  useEffect(()=>{
-    console.log(houses);
-    
-  },[houses])
+
 
   
       
@@ -39,10 +36,7 @@ const ContextHouse = ({children}) => {
     }, [token])
 
 
-   useEffect(()=>{
-    console.log(user);
-    
-  },[user])
+ 
 
 
   return (
