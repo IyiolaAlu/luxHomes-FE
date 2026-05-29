@@ -16,6 +16,8 @@ const HouseCard = ({
   onEditBtn,
   onDeleteBtn,
 }) => {
+
+  
   return (
     <div className="house-card">
       <div className="house-card-image">

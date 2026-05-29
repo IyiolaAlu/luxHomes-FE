@@ -24,6 +24,11 @@ const Houses = () => {
       </div>
     );
   }
+    const moneyFormatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 0,
+  });
 
   return (
     <>
@@ -96,7 +101,7 @@ const Houses = () => {
                 location={location}
                 address={address}
                 description={description}
-                price={price}
+                price={moneyFormatter.format(price)}
                 bedrooms={bedrooms}
                 bathrooms={bathrooms}
                 area={area}
