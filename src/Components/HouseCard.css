@@ -1,0 +1,219 @@
+/* HouseCard.css */
+
+.house-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.house-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Section */
+.house-card-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.house-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.house-card:hover .house-card-image img {
+  transform: scale(1.08);
+}
+
+/* Overlay with Actions */
+.house-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.house-card:hover .house-card-overlay {
+  opacity: 1;
+}
+
+.house-card-actions {
+  display: flex;
+  gap: 10px;
+  margin: 12px;
+}
+
+.action-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-btn {
+  background: #3b82f6;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+/* Content Section */
+.house-card-content {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.house-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.house-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.house-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e65c00;
+  margin: 0;
+}
+
+/* Location */
+.house-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.location-icon {
+  font-size: 0.8rem;
+}
+
+.location-text {
+  font-size: 0.8rem;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Description */
+.house-description {
+  font-size: 0.85rem;
+  color: #888;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Features */
+.house-features {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.feature-icon {
+  font-size: 0.85rem;
+}
+
+/* View Details Button */
+.view-details-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.view-details-btn:hover {
+  background: linear-gradient(135deg, #e65c00, #ff8c00);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .house-card-image {
+    height: 200px;
+  }
+  
+  .house-card-content {
+    padding: 1rem;
+  }
+  
+  .house-title {
+    font-size: 1rem;
+  }
+  
+  .house-price {
+    font-size: 1rem;
+  }
+  
+  .feature {
+    font-size: 0.7rem;
+  }
+}

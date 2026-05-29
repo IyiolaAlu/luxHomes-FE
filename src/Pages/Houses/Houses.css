@@ -1,0 +1,302 @@
+/* Houses.css */
+
+/* Container */
+.houses-container {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+/* Hero Section */
+.houses-hero {
+  position: relative;
+  height: 400px;
+  background-image: url("https://images.unsplash.com/photo-1564013799919-ab600027ffc6");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.houses-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.houses-hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 2rem;
+}
+
+.houses-hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.6s ease;
+}
+
+.houses-hero-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Search Section */
+.houses-search-section {
+  max-width: 800px;
+  margin: -30px auto 2rem;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.houses-search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.houses-search-container:focus-within {
+  box-shadow: 0 10px 35px rgba(230, 92, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  font-size: 1.2rem;
+  color: #999;
+}
+
+.houses-search-input {
+  width: 100%;
+  padding: 18px 50px 18px 55px;
+  border: none;
+  border-radius: 60px;
+  font-size: 1rem;
+  outline: none;
+  background: transparent;
+}
+
+.houses-search-input::placeholder {
+  color: #bbb;
+}
+
+.search-clear {
+  position: absolute;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s;
+  padding: 5px;
+}
+
+.search-clear:hover {
+  color: #e65c00;
+}
+
+.search-results-count {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Grid Layout */
+.houses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Empty State */
+.houses-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.houses-empty h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.houses-empty p {
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+.empty-reset-btn {
+  background: linear-gradient(135deg, #e65c00, #ff8c00);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.empty-reset-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(230, 92, 0, 0.3);
+}
+
+/* Loading State */
+.houses-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #eee;
+  border-top-color: #e65c00;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.houses-loading p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Responsive Breakpoints */
+
+/* Tablet - 2 columns */
+@media (max-width: 992px) {
+  .houses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+  
+  .houses-hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .houses-hero-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile - 1 column */
+@media (max-width: 768px) {
+  .houses-hero {
+    height: 300px;
+  }
+  
+  .houses-hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .houses-hero-content p {
+    font-size: 0.9rem;
+  }
+  
+  .houses-search-section {
+    margin-top: -20px;
+    padding: 0 1rem;
+  }
+  
+  .houses-search-input {
+    padding: 14px 45px 14px 50px;
+    font-size: 0.9rem;
+  }
+  
+  .search-icon {
+    left: 18px;
+    font-size: 1rem;
+  }
+  
+  .houses-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .houses-empty h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .houses-hero {
+    height: 250px;
+  }
+  
+  .houses-hero-content h1 {
+    font-size: 1.5rem;
+  }
+  
+  .houses-hero-content p {
+    font-size: 0.8rem;
+  }
+  
+  .houses-search-input {
+    padding: 12px 40px 12px 45px;
+    font-size: 0.85rem;
+  }
+  
+  .search-icon {
+    left: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .search-clear {
+    right: 15px;
+    font-size: 1rem;
+  }
+}
