@@ -57,7 +57,7 @@ const Signup = () => {
       await fetchUser();
 
       if (token) {
-        navigate("/home");
+        navigate("/");
       }
     } catch (error) {
       setLoading(false);
