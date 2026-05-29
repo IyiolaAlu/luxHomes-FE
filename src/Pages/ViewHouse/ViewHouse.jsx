@@ -23,7 +23,7 @@ const ViewHouse = () => {
   useEffect(() => {
     const getHouse = async () => {
       try {
-        const res = await axios.get(`http://localhost:5001/api/houses/${id}`);
+        const res = await axios.get(`https://luxhomes-be.onrender.com/api/houses/${id}`);
         setHouse(res.data);
       } catch (err) {
         seterror("Failed to load property");
@@ -37,7 +37,7 @@ const ViewHouse = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:5001/api/houses/${id}/comments`,
+        `https://luxhomes-be.onrender.com/api/houses/${id}/comments`,
         {
           comments: commentsForm.comment,
         },
@@ -59,7 +59,7 @@ const ViewHouse = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:5001/api/houses/${id}/like`,
+        `https://luxhomes-be.onrender.com/api/houses/${id}/like`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

@@ -13,7 +13,7 @@ const ContextHouse = ({children}) => {
 
   useEffect(()=>{
     const fetchHouses = async ()=>{
-      const res = await axios.get('http://localhost:5001/api/houses', {})
+      const res = await axios.get('https://luxhomes-be.onrender.com/api/houses', {})
       setHouses(res.data)
     }
     fetchHouses()
@@ -25,7 +25,7 @@ const ContextHouse = ({children}) => {
       
     const fetchUser = async ()=>{
       if (!token) return
-      const res = await axios.get('http://localhost:5001/api/users/me', {
+      const res = await axios.get('https://luxhomes-be.onrender.com/api/users/me', {
         headers: {'Authorization': `Bearer ${token}`}
       })
       setuser(res.data)

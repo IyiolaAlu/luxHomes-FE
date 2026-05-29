@@ -41,7 +41,7 @@ const Signup = () => {
     seterror(null);
     
     try {
-      const res = await axios.post("http://localhost:5001/api/users/signup", {
+      const res = await axios.post("https://luxhomes-be.onrender.com/api/users/signup", {
         firstName: form.firstName,
         lastName: form.lastName,
         profileImage: image,

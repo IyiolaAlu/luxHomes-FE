@@ -70,7 +70,7 @@ const AgentsDashBoard = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:5001/api/houses",
+        "https://luxhomes-be.onrender.com/api/houses",
         {
           title: form.title,
           address: form.address,
@@ -120,7 +120,7 @@ const AgentsDashBoard = () => {
     setDeleteLoading(_id);
     try {
       const Token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:5001/api/houses/${_id}`, {
+      await axios.delete(`https://luxhomes-be.onrender.com/api/houses/${_id}`, {
         headers: { Authorization: `Bearer ${Token}` },
       });
 
@@ -168,7 +168,7 @@ const AgentsDashBoard = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.put(
-        `http://localhost:5001/api/houses/${editId}`,
+        `https://luxhomes-be.onrender.com/api/houses/${editId}`,
         {
           title: newform.newTitle,
           address: newform.newAddress,

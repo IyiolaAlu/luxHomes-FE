@@ -23,7 +23,7 @@ const Login = () => {
     seterror(null);
     
     try {
-      const res = await axios.post("http://localhost:5001/api/users/login", {
+      const res = await axios.post("https://luxhomes-be.onrender.com/api/users/login", {
         email: form.email,
         password: form.password,
       });
